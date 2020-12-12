@@ -5,16 +5,23 @@ class MarvelAPI {
   constructor({ apiKey }) {
     this.apiKey = apiKey;
   }
-  async request(endpoint, method, params) {
+  async request(endpoint, method, params = {}) {
     if (!this.apiKey) {
       throw new Error("Missing api key");
     }
-    const unparsedResponse = await fetch(
-      `${this.baseUrl}/${endpoint}?apikey=${this.apiKey}`,
-      {
-        method,
-      }
-    );
+
+    const requestParams = { apikey: this.apiKey, ...params };
+    let parsedParams = "";
+    if (method === "GET") {
+      parsedParams = Object.keys(requestParams)
+        .map((key) => `${key}=${requestParams[key]}`)
+        .join("&");
+      endpoint += `?${parsedParams}`;
+    }
+
+    const unparsedResponse = await fetch(`${this.baseUrl}/${endpoint}`, {
+      method,
+    });
 
     if (
       unparsedResponse.headers.get("content-type").includes("application/json")

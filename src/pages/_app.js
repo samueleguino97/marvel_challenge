@@ -1,12 +1,15 @@
 import SideBarLayout from "../components/layouts/SideBarLayout/SideBarLayout";
-import MarvelAPI from "../marvel/api";
+import { Provider } from "react-redux";
+
 import "../globalStyles.scss";
-const marvelApi = new MarvelAPI({ apiKey: "d631088db6aaacf347fc384327f95ad7" });
+import store from "../redux/store";
 function MyApp({ Component, pageProps }) {
   return (
-    <SideBarLayout>
-      <Component {...pageProps} />
-    </SideBarLayout>
+    <Provider store={store}>
+      <SideBarLayout>
+        <Component {...pageProps} />
+      </SideBarLayout>
+    </Provider>
   );
 }
 
