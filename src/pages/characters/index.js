@@ -4,6 +4,7 @@ import Character from "../../components/Character/Character";
 import { usePaginatedMarvel } from "../../hooks/useMarvel";
 import { useRouter } from "next/router";
 import { FixedSizeList } from "react-window";
+import Head from "next/head";
 const FILTERS = [
   { label: "Name", value: "NAME" },
   { label: "Comic Title", value: "COMIC" },
@@ -25,6 +26,10 @@ function Characters() {
 
   return (
     <div>
+      {" "}
+      <Head>
+        <title>Marvel Challenge</title>
+      </Head>
       <div className="search-container">
         <h2>Characters</h2>
         {/* {FILTERS.map((filter) => (

@@ -10,7 +10,15 @@ function CharacterPage() {
   const character = useMarvel(`characters/${id}`);
   console.log(character);
 
-  return <div>{character?.data?.results[0]?.name}</div>;
+  return (
+    <div>
+      {" "}
+      <Head>
+        <title>Marvel Challenge</title>
+      </Head>
+      {character?.data?.results[0]?.name}
+    </div>
+  );
 }
 
 export default CharacterPage;

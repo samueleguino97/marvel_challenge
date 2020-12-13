@@ -4,6 +4,7 @@ import Character from "../../components/Character/Character";
 import { usePaginatedMarvel } from "../../hooks/useMarvel";
 import Autocomplete from "react-autocomplete";
 import { useRouter } from "next/router";
+import Head from "next/head";
 const FILTERS = [
   { label: "Name", value: "NAME" },
   { label: "Comic Title", value: "COMIC" },
@@ -24,6 +25,9 @@ function Stories() {
   console.log(stories);
   return (
     <div>
+      <Head>
+        <title>Marvel Challenge</title>
+      </Head>
       <div className="search-container">
         <h2>stories</h2>
         {/* {FILTERS.map((filter) => (

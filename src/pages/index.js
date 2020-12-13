@@ -10,6 +10,9 @@ export default function Home() {
   const ch = useSelector(selectCharacters);
   return (
     <div className="home-container">
+      <Head>
+        <title>Marvel Challenge</title>
+      </Head>
       <div className="main-grid">
         <div className="ch">Sam</div>
         <div className="co">Sams</div>

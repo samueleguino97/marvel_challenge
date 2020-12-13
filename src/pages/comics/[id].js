@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { useMarvel } from "../../hooks/useMarvel";
+import Head from "next/head";
 
 function ComicPage() {
   const {
@@ -10,7 +11,15 @@ function ComicPage() {
   const comic = useMarvel(`comics/${id}`);
   console.log(comic);
 
-  return <div>{comic?.data?.results[0]?.title}</div>;
+  return (
+    <div>
+      {" "}
+      <Head>
+        <title>Marvel Challenge</title>
+      </Head>
+      {comic?.data?.results[0]?.title}
+    </div>
+  );
 }
 
 export default ComicPage;

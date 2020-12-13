@@ -3,6 +3,7 @@ import React, { useMemo, useState } from "react";
 import Character from "../../components/Character/Character";
 import { usePaginatedMarvel } from "../../hooks/useMarvel";
 import Autocomplete from "react-autocomplete";
+import Head from "next/head";
 import { useRouter } from "next/router";
 
 const COMIC_FORMATS = {
@@ -35,6 +36,10 @@ function Comics() {
   const comics = usePaginatedMarvel("comics", queryParams);
   return (
     <div>
+      {" "}
+      <Head>
+        <title>Marvel Challenge</title>
+      </Head>
       <div className="search-container">
         <h2>Comics</h2>
         {/* {FILTERS.map((filter) => (
