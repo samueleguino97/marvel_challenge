@@ -1,10 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import MarvelAPI from "../marvel/api";
 import { debounce } from "../utils/debounce";
 
 const marvelApi = new MarvelAPI({ apiKey: "d631088db6aaacf347fc384327f95ad7" });
+
 export function useMarvel(endpoint = "", requestParameters) {
-  const [response, setResponse] = useState(null);
+  const reduxData = useSelector((state) => state[endpoint]);
+  const [response, setResponse] = useState({ data: { results: reduxData } });
 
   const [loading, setLoading] = useState(true);
 

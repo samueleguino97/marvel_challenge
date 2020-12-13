@@ -21,7 +21,6 @@ function Comics() {
     [searchTerm]
   );
   const comics = usePaginatedMarvel("comics", queryParams);
-  console.log(comics);
   return (
     <div>
       <div className="search-container">
