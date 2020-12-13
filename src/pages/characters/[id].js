@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { useMarvel } from "../../hooks/useMarvel";
+import Head from "next/head";
 
 function CharacterPage() {
   const {
