@@ -1,0 +1,25 @@
+.home-container{
+    padding: 0 24px ;
+    height: 100%;
+}
+
+.main-grid {
+    height: 100%;
+    max-width: 1080px;
+
+    margin: 0 auto;
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.8fr 1fr 80px;
+    gap: 10px 10px;
+    grid-template-areas:
+      "ch ch st st"
+      "co co st st"
+      "co co sq sq";
+  }
+  .ch { grid-area: ch; background-color: yellow; }
+  .co { grid-area: co;  background-color: green;}
+  .st { grid-area: st;  background-color: blue;}
+  .sq { grid-area: sq; background-color: red; }

@@ -24,16 +24,18 @@ function Comics() {
   console.log(comics);
   return (
     <div>
-      <h2>Comics</h2>
-      {/* {FILTERS.map((filter) => (
+      <div className="search-container">
+        <h2>Comics</h2>
+        {/* {FILTERS.map((filter) => (
         <div onClick={() => setSelectedFilter(filter.value)}>
           {filter.label}
         </div>
       ))} */}
-      <input
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+        <input
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
       <div className="characters-list">
         {comics.data?.results
           ?.filter((character) =>

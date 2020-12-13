@@ -24,16 +24,18 @@ function Stories() {
   console.log(stories);
   return (
     <div>
-      <h2>stories</h2>
-      {/* {FILTERS.map((filter) => (
+      <div className="search-container">
+        <h2>stories</h2>
+        {/* {FILTERS.map((filter) => (
         <div onClick={() => setSelectedFilter(filter.value)}>
           {filter.label}
         </div>
       ))} */}
-      <input
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+        <input
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
       <div className="characters-list">
         {stories.data?.results
           ?.filter((character) =>

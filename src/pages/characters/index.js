@@ -25,16 +25,18 @@ function Characters() {
 
   return (
     <div>
-      <h2>Characters</h2>
-      {/* {FILTERS.map((filter) => (
+      <div className="search-container">
+        <h2>Characters</h2>
+        {/* {FILTERS.map((filter) => (
         <div onClick={() => setSelectedFilter(filter.value)}>
           {filter.label}
         </div>
       ))} */}
-      <input
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+        <input
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
       {/* <FixedSizeList height={150} itemCount={20} itemSize={35} width={300}>
         {({ index, style }) => (
           <div style={style} key={characters.data?.results[index]?.id}>

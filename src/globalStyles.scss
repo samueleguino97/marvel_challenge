@@ -6,6 +6,15 @@
     sans-serif;
 }
 
+.search-container{
+    display: flex;
+    flex-direction: column;
+  justify-content: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  
+}
+
 .characters-list{
   display: flex;
   flex-wrap: wrap;

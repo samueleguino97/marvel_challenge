@@ -8,7 +8,12 @@ function SideBarLayout({ children }) {
     <div className={classes.layoutContainer}>
       <div className={classes.content}>
         <nav>
-          <Image src="/logo.png" alt="Marvel Logo" width={169} height={68} />
+          <Image
+            src="/logo-black.png"
+            alt="Marvel Logo"
+            width={169}
+            height={68}
+          />
           <NavLink to="/characters">Characters</NavLink>
           <NavLink to="/comics">Comics</NavLink>
           <NavLink to="/stories">Stories</NavLink>

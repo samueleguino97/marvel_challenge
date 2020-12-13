@@ -8,6 +8,8 @@ const characterSlice = createSlice({
   },
 });
 
+export const selectCharacters = (state) => state.characters;
+
 export const { setCharacters } = characterSlice.actions;
 
 export default characterSlice.reducer;
