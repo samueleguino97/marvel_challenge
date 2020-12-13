@@ -46,18 +46,18 @@ function TopBarLayout({ children }) {
         <div
           style={{
             overflow: "hidden",
-            position: "fixed",
             zIndex: 99999999,
             height: "100vh",
+            width: "100%",
+            position: "fixed",
+            left: 0,
+            top: 0,
           }}
         >
           <Image
             className={classes.left}
             src="/marvel_left.png"
             style={{
-              position: "fixed",
-              left: 0,
-              top: 0,
               height: "100vh",
               width: "100%",
               zIndex: 99999999,
@@ -69,9 +69,6 @@ function TopBarLayout({ children }) {
             className={classes.right}
             src="/marvel_right.png"
             style={{
-              position: "fixed",
-              right: 0.51499,
-              bottom: 0,
               height: "100vh",
               width: "100%",
               zIndex: 99999999,
