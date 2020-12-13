@@ -39,3 +39,29 @@
     
   }
 }
+.left{
+  animation: slide-left 2s ease-in-out 500ms;
+}
+.right {
+  animation: slide-right 2s ease-in-out 500ms;
+
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slide-right {
+  from {
+    transform: translateX(0);
+
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

@@ -8,9 +8,6 @@ export default function Home() {
   const st = useSelector(selectStories);
   const co = useSelector(selectComics);
   const ch = useSelector(selectCharacters);
-  console.log(st);
-  console.log(co);
-  console.log(ch);
   return (
     <div className="home-container">
       <div className="main-grid">

@@ -6,6 +6,10 @@
     sans-serif;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .search-container{
     display: flex;
     flex-direction: column;

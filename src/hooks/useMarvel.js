@@ -7,7 +7,9 @@ const marvelApi = new MarvelAPI({ apiKey: "d631088db6aaacf347fc384327f95ad7" });
 
 export function useMarvel(endpoint = "", requestParameters) {
   const reduxData = useSelector((state) => state[endpoint]);
-  const [response, setResponse] = useState({ data: { results: reduxData } });
+  const [response, setResponse] = useState({
+    data: { results: reduxData || [] },
+  });
 
   const [loading, setLoading] = useState(true);
 

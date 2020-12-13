@@ -4,6 +4,18 @@ import Character from "../../components/Character/Character";
 import { usePaginatedMarvel } from "../../hooks/useMarvel";
 import Autocomplete from "react-autocomplete";
 import { useRouter } from "next/router";
+
+const COMIC_FORMATS = {
+  COMIC: "comic",
+  MAGAZINE: "magazine",
+  TRADE_PAPERBACK: "trade paperback",
+  HARDCOVER: "hardcover",
+  DIGEST: "digest",
+  GRAPHIC_NOVEL: "graphic novel",
+  DIGITAL_COMIC: "digital comic",
+  INFINITE_COMIC: "infinite comic",
+};
+
 const FILTERS = [
   { label: "Name", value: "NAME" },
   { label: "Comic Title", value: "COMIC" },

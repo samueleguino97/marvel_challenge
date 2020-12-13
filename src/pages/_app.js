@@ -12,30 +12,6 @@ function MyApp({ Component, pageProps }) {
       <TopBarLayout>
         <Component {...pageProps} />
       </TopBarLayout>
-      {/* <div style={{ overflow: "hidden", zIndex: 99999999 }}>
-        <img
-          src="/marvel_left.png"
-          style={{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            height: "100vh",
-            width: "100%",
-            zIndex: 99999999,
-          }}
-        />
-        <img
-          src="/marvel_right.png"
-          style={{
-            position: "absolute",
-            right: 0.51499,
-            bottom: 0,
-            height: "100vh",
-            width: "100%",
-            zIndex: 99999999,
-          }}
-        />
-      </div> */}
     </Provider>
   );
 }
