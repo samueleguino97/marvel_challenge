@@ -14,7 +14,8 @@ class MarvelAPI {
     let parsedParams = "";
     if (method === "GET") {
       parsedParams = Object.keys(requestParams)
-        .map((key) => `${key}=${requestParams[key]}`)
+        .filter((key) => !!requestParams[key])
+        .map((key) => `${key}=${encodeURIComponent(requestParams[key])}`)
         .join("&");
       endpoint += `?${parsedParams}`;
     }

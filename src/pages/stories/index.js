@@ -29,16 +29,7 @@ function Stories() {
         <title>Marvel Challenge</title>
       </Head>
       <div className="search-container">
-        <h2>stories</h2>
-        {/* {FILTERS.map((filter) => (
-        <div onClick={() => setSelectedFilter(filter.value)}>
-          {filter.label}
-        </div>
-      ))} */}
-        <input
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <h2>Stories</h2>
       </div>
       <div className="characters-list">
         {stories.data?.results

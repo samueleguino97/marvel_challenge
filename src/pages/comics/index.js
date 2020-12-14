@@ -24,14 +24,18 @@ const FILTERS = [
 ];
 function Comics() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [formatFilter, setFormatFilter] = useState("");
+  const [issueFilter, setIssueFilter] = useState("");
+
   const [selectedFilter, setSelectedFilter] = useState(FILTERS[0].value);
   const router = useRouter();
   const queryParams = useMemo(
-    () =>
-      searchTerm && selectedFilter === "NAME"
-        ? { nameStartsWith: searchTerm }
-        : {},
-    [searchTerm]
+    () => ({
+      titleStartsWith: searchTerm,
+      format: formatFilter,
+      issueNumber: +issueFilter,
+    }),
+    [searchTerm, formatFilter, issueFilter]
   );
   const comics = usePaginatedMarvel("comics", queryParams);
   return (
@@ -42,13 +46,27 @@ function Comics() {
       </Head>
       <div className="search-container">
         <h2>Comics</h2>
-        {/* {FILTERS.map((filter) => (
-        <div onClick={() => setSelectedFilter(filter.value)}>
-          {filter.label}
+        <div>
+          <input
+            value={issueFilter}
+            placeholder="Search for any comic by issue number"
+            onChange={(e) => setIssueFilter(e.target.value)}
+          />
+          <select
+            value={formatFilter}
+            onChange={(e) => setFormatFilter(e.target.value)}
+          >
+            <option value="">Format Filter</option>
+            {Object.keys(COMIC_FORMATS).map((format) => (
+              <option value={COMIC_FORMATS[format]}>
+                {COMIC_FORMATS[format]}
+              </option>
+            ))}
+          </select>
         </div>
-      ))} */}
         <input
           value={searchTerm}
+          placeholder="Search for any comic by their title"
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </div>

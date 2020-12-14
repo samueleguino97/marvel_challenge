@@ -37,6 +37,11 @@ body{
     &:focus{
       outline: red;
     }
+  }select{
+    padding: 6px;
+    &:focus{
+      outline: red;
+    }
   }
   
 }
