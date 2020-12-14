@@ -32,14 +32,11 @@ function Characters() {
       </Head>
       <div className="search-container">
         <h2>Characters</h2>
-        {/* {FILTERS.map((filter) => (
-        <div onClick={() => setSelectedFilter(filter.value)}>
-          {filter.label}
-        </div>
-      ))} */}
+
         <input
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Search for any character by their name"
         />
       </div>
       {/* <FixedSizeList height={150} itemCount={20} itemSize={35} width={300}>
@@ -65,8 +62,8 @@ function Characters() {
             />
           ))}
       </div>
-      <span onClick={characters.previousPage}>back</span>
-      <span onClick={characters.nextPage}>next</span>
+      {/* <span onClick={characters.previousPage}>back</span>
+      <span onClick={characters.nextPage}>next</span> */}
     </div>
   );
 }

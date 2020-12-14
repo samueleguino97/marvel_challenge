@@ -1,8 +1,47 @@
 .home-container{
     padding: 0 24px ;
-    height: 100%;
+    height: calc(100vh - 150px);
+
 }
 
+.grid-overlay{
+    transition: all 0.5s;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #00000099;
+    color: white;
+    cursor: pointer;
+
+    text-align: center;
+
+    h2{
+        font: normal normal 600 46px Metropolis;
+    }
+    p{
+        max-width: 60%;
+        margin: 10px 0 ;
+    }
+    .view{
+        background-color: red;
+        border-radius: 8px;
+        padding: 8px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    }
+}
 .main-grid {
     height: 100%;
     max-width: 1080px;
@@ -12,14 +51,25 @@
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.8fr 1fr 80px;
+    grid-template-rows: 0.8fr 1fr 60px;
     gap: 10px 10px;
     grid-template-areas:
       "ch ch st st"
       "co co st st"
       "co co sq sq";
+
+          >*:hover{
+            .grid-overlay{
+                opacity: 1;
+            }
+      }
   }
-  .ch { grid-area: ch; background-color: yellow; }
-  .co { grid-area: co;  background-color: green;}
-  .st { grid-area: st;  background-color: blue;}
-  .sq { grid-area: sq; background-color: red; }
+  
+  .ch { grid-area: ch;
+    position: relative; background-color: yellow; }
+  .co { grid-area: co;
+    position: relative;  background-color: green;}
+  .st { grid-area: st;
+    position: relative;  background-color: blue;}
+  .sq { grid-area: sq;
+    position: relative; background-color: red; }

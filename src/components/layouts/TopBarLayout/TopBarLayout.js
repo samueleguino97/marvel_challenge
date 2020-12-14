@@ -27,8 +27,8 @@ function TopBarLayout({ children }) {
             <Image
               src="/logo-black.png"
               alt="Marvel Logo"
-              width={169}
-              height={45}
+              width={138}
+              height={51}
               onClick={() => router.push("/")}
             />
             <div>
