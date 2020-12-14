@@ -19,6 +19,7 @@ function Character({ character, onClick = () => null }) {
     >
       {character?.thumbnail && (
         <Image
+          alt="character"
           src={
             character?.thumbnail?.path +
             "/detail." +
@@ -34,6 +35,7 @@ function Character({ character, onClick = () => null }) {
       {isHovering && (
         <div onClick={onClick} ref={overlayRef} className={`character-overlay`}>
           <Image
+            alt="character"
             src={
               character?.thumbnail?.path +
               "/detail." +

@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
       <div className="main-grid">
         <div className="ch">
-          <Image src="/images/characters.png" layout="fill" />
+          <Image alt="characters" src="/images/characters.png" layout="fill" />
           <div
             onClick={() => router.push("/characters")}
             className="grid-overlay"
@@ -26,7 +26,7 @@ export default function Home() {
           </div>
         </div>
         <div className="co">
-          <Image src="/images/comics.png" layout="fill" />{" "}
+          <Image alt="comics" src="/images/comics.png" layout="fill" />{" "}
           <div onClick={() => router.push("/comics")} className="grid-overlay">
             <h2>Comics</h2>
             <p>
@@ -36,7 +36,7 @@ export default function Home() {
           </div>
         </div>
         <div className="st">
-          <Image src="/images/stories.png" layout="fill" />{" "}
+          <Image alt="stories" src="/images/stories.png" layout="fill" />{" "}
           <div onClick={() => router.push("/stories")} className="grid-overlay">
             <h2>Stories</h2>
             <p>

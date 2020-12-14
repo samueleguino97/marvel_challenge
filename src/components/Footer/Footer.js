@@ -10,7 +10,7 @@ function Footer() {
   return (
     <div className={classes.container}>
       <div style={{ height: 80, width: 20, backgroundColor: "red" }} />
-      <Image src="/logo-black.png" width={280} height={70} />
+      <Image alt="logo" src="/logo-black.png" width={280} height={70} />
       <div>
         Characters
         {characters.slice(0, 4).map((item) => (

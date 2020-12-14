@@ -1,8 +1,6 @@
-import Image from "next/image";
 import React, { useMemo, useState } from "react";
 import Character from "../../components/Character/Character";
 import { usePaginatedMarvel } from "../../hooks/useMarvel";
-import Autocomplete from "react-autocomplete";
 import { useRouter } from "next/router";
 import Head from "next/head";
 const FILTERS = [

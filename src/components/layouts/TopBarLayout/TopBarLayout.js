@@ -37,7 +37,15 @@ function TopBarLayout({ children }) {
               <NavLink to="/stories">Stories</NavLink>
             </div>
           </nav>
-          <main>{children}</main>
+          <main>
+            <Image
+              alt="background"
+              layout="fill"
+              src="/images/background.png"
+              className={classes.background}
+            />
+            {children}
+          </main>
           <Footer />
         </div>
       </div>
@@ -55,6 +63,7 @@ function TopBarLayout({ children }) {
           }}
         >
           <Image
+            alt="leftspanel"
             className={classes.left}
             src="/marvel_left.png"
             style={{
@@ -66,6 +75,7 @@ function TopBarLayout({ children }) {
             layout="fill"
           />
           <Image
+            alt="rightpanel"
             className={classes.right}
             src="/marvel_right.png"
             style={{

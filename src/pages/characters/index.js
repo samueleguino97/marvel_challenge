@@ -1,9 +1,7 @@
-import Image from "next/image";
 import React, { useMemo, useState } from "react";
 import Character from "../../components/Character/Character";
 import { usePaginatedMarvel } from "../../hooks/useMarvel";
 import { useRouter } from "next/router";
-import { FixedSizeList } from "react-window";
 import Head from "next/head";
 const FILTERS = [
   { label: "Name", value: "NAME" },
