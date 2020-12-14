@@ -8,15 +8,15 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { loadAllData } from "../../../redux/dataLoader";
 function TopBarLayout({ children }) {
-  const [animationShouldStart, setAnimationShouldStart] = useState(true);
+  const [animationShouldStart, setAnimationShouldStart] = useState(false);
   const router = useRouter();
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadAllData());
-    setTimeout(() => setAnimationShouldStart(true), 0);
-    setTimeout(() => setAnimationShouldStart(false), 2400);
+    setTimeout(() => setAnimationShouldStart(false), 0);
+    setTimeout(() => setAnimationShouldStart(true), 2400);
   }, []);
 
   return (
@@ -41,6 +41,8 @@ function TopBarLayout({ children }) {
             <Image
               alt="background"
               layout="fill"
+              objectFit="cover"
+              quality={5}
               src="/images/background.png"
               className={classes.background}
             />
@@ -50,7 +52,7 @@ function TopBarLayout({ children }) {
         </div>
       </div>
 
-      {animationShouldStart && (
+      {!animationShouldStart && (
         <div
           style={{
             overflow: "hidden",
