@@ -8,15 +8,12 @@ import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 import { loadAllData } from "../../../redux/dataLoader";
 function TopBarLayout({ children }) {
-  const [animationShouldStart, setAnimationShouldStart] = useState(false);
   const router = useRouter();
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadAllData());
-    setTimeout(() => setAnimationShouldStart(false), 0);
-    setTimeout(() => setAnimationShouldStart(true), 2400);
   }, []);
 
   return (
@@ -38,58 +35,20 @@ function TopBarLayout({ children }) {
             </div>
           </nav>
           <main>
-            <Image
-              alt="background"
-              layout="fill"
-              objectFit="cover"
-              quality={5}
-              src="/images/background.png"
-              className={classes.background}
-            />
+            <div className={classes.background} style={{ zIndex: -1 }}>
+              <Image
+                alt="background"
+                layout="fill"
+                objectFit="cover"
+                quality={5}
+                src="/images/background.png"
+              />
+            </div>
             {children}
           </main>
           <Footer />
         </div>
       </div>
-
-      {!animationShouldStart && (
-        <div
-          style={{
-            overflow: "hidden",
-            zIndex: 99999999,
-            height: "100vh",
-            width: "100%",
-            position: "fixed",
-            left: 0,
-            top: 0,
-          }}
-        >
-          <Image
-            alt="leftspanel"
-            className={classes.left}
-            src="/marvel_left.png"
-            style={{
-              height: "100vh",
-              width: "100%",
-              zIndex: 99999999,
-              overflow: "hidden",
-            }}
-            layout="fill"
-          />
-          <Image
-            alt="rightpanel"
-            className={classes.right}
-            src="/marvel_right.png"
-            style={{
-              height: "100vh",
-              width: "100%",
-              zIndex: 99999999,
-              overflow: "hidden",
-            }}
-            layout="fill"
-          />
-        </div>
-      )}
     </>
   );
 }

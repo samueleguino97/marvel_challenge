@@ -31,7 +31,9 @@ function Character({ character, onClick = () => null }) {
           onMouseEnter={() => setIsHovering(true)}
         />
       )}
-      {character.name}
+      <span onClick={character?.thumbnail ? () => null : onClick}>
+        {character.name}
+      </span>
       {isHovering && (
         <div onClick={onClick} ref={overlayRef} className={`character-overlay`}>
           <Image

@@ -25,11 +25,11 @@ export function useMarvel(endpoint = "", requestParameters) {
 
   const debouncedFunction = useMemo(
     () => debounce((params) => loadData(params), 300),
-    []
+    [endpoint]
   );
   useEffect(() => {
     debouncedFunction(requestParameters);
-  }, [requestParameters]);
+  }, [requestParameters, endpoint]);
   return { data: response?.data, loading, loadData, response };
 }
 

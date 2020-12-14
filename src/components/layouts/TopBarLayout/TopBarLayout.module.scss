@@ -20,10 +20,11 @@
     padding-left: 128px;
     padding-right: 128px;
 
-    z-index: 200;
+    z-index: 900;
 
     a{
       color: white;
+      z-index: 900;
     }
 
     img {
@@ -35,6 +36,7 @@
     flex: 1;
     min-height: calc(100% - 80px);
     padding:32px;
+    position: relative;
     
     
     
@@ -56,6 +58,7 @@
   width: 100%;
 opacity: 0.6;
 object-fit: cover;
+z-index: -1;
 
 }
 
