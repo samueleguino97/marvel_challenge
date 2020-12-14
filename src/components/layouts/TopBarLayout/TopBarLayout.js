@@ -32,6 +32,7 @@ function TopBarLayout({ children }) {
               <NavLink to="/characters">Characters</NavLink>
               <NavLink to="/comics">Comics</NavLink>
               <NavLink to="/stories">Stories</NavLink>
+              <NavLink to="/bookmarks">Bookmarks</NavLink>
             </div>
           </nav>
           <main>

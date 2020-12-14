@@ -3,6 +3,7 @@ import React from "react";
 import { useMarvel } from "../../hooks/useMarvel";
 import Head from "next/head";
 import Image from "next/image";
+import { addBookmark } from "../../utils/bookmarks";
 
 function CharacterPage() {
   const {
@@ -26,6 +27,14 @@ function CharacterPage() {
       <div className="detail-layout">
         <div className="detail">
           <span>{characterData.name}</span>
+
+          <button
+            onClick={() =>
+              addBookmark(characterData.name, "/characters/" + characterData.id)
+            }
+          >
+            Add To Bookmark
+          </button>
           <Image
             width={140}
             height={140}

@@ -3,6 +3,7 @@ import React from "react";
 import { useMarvel } from "../../hooks/useMarvel";
 import Head from "next/head";
 import Image from "next/image";
+import { addBookmark } from "../../utils/bookmarks";
 
 function ComicPage() {
   const {
@@ -26,6 +27,13 @@ function ComicPage() {
       <div className="detail-layout">
         <div className="detail">
           <span>{storyData.title}</span>
+          <button
+            onClick={() =>
+              addBookmark(storyData.title, "/stories/" + storyData.id)
+            }
+          >
+            Add To Bookmark
+          </button>
 
           <p>{storyData.description}</p>
         </div>
